@@ -9,10 +9,14 @@
 <body>
     <div class="container">
         <h1>Welcome to the Node.js File Server</h1>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".jpeg, .jpg, .png, .gif, .pdf" required>
+        
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="file" accept=".jpeg, .jpg, .png, .gif, .pdf" required>
             <button type="submit">Upload File</button>
         </form>
+
+        <div id="uploadStatus"></div>
+
         <div class="notes">
             <h3>Important Notes:</h3>
             <p>Please ensure that you upload files of the following types:</p>
@@ -23,5 +27,30 @@
             <p>Files must not exceed 5MB in size.</p>
         </div>
     </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const uploadStatus = document.getElementById('uploadStatus');
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const text = await response.text();
+                if (response.ok) {
+                    uploadStatus.innerHTML = `<p style="color: green;">✅ ${text}</p>`;
+                } else {
+                    uploadStatus.innerHTML = `<p style="color: red;">❌ ${text}</p>`;
+                }
+            } catch (error) {
+                uploadStatus.innerHTML = `<p style="color: red;">❌ Upload failed. Try again.</p>`;
+            }
+        });
+    </script>
 </body>
 </html>
