@@ -1,5 +1,5 @@
 body {
-    background-color: #001f3f; /* Navy blue background */
+    background-color: #001f3f; 
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-    color: #ffffff;
+    color: #001f3f;
     margin-bottom: 20px;
     font-size: 28px;
 }
