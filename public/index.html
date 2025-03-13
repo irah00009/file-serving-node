@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to the Node.js File Server</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".jpeg, .jpg, .png, .gif, .pdf" required>
-        <button type="submit">Upload File</button>
-    </form>
-    <div class="notes">
-        <h3>Important Notes:</h3>
-        <p>Please ensure that you upload files of the following types:</p>
-        <ul>
-            <li>Images: <strong>.jpeg, .jpg, .png, .gif</strong></li>
-            <li>Documents: <strong>.pdf</strong></li>
-        </ul>
-        <p>Files must not exceed 5MB in size.</p>
+    <div class="container">
+        <h1>Welcome to the Node.js File Server</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".jpeg, .jpg, .png, .gif, .pdf" required>
+            <button type="submit">Upload File</button>
+        </form>
+        <div class="notes">
+            <h3>Important Notes:</h3>
+            <p>Please ensure that you upload files of the following types:</p>
+            <ul>
+                <li>Images: <strong>.jpeg, .jpg, .png, .gif</strong></li>
+                <li>Documents: <strong>.pdf</strong></li>
+            </ul>
+            <p>Files must not exceed 5MB in size.</p>
+        </div>
     </div>
 </body>
 </html>

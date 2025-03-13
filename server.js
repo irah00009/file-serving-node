@@ -18,16 +18,13 @@ const storage = multer.diskStorage({
         cb(null, uploadDir);
     },
     filename: function(req, file, cb) {
-        // Keep original filename
         cb(null, Date.now() + '-' + file.originalname);
     }
 });
 
 // File filter function
 const fileFilter = (req, file, cb) => {
-    // Allowed file types
     const allowedTypes = /jpeg|jpg|png|gif|pdf/;
-    // Check extension and mimetype
     const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = allowedTypes.test(file.mimetype);
 
