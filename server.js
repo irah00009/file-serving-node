@@ -6,13 +6,13 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create uploads directory if it doesn't exist
+
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
 
-// Configure multer for file upload
+
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, uploadDir);
@@ -48,7 +48,7 @@ const upload = multer({
 app.use(express.static('public'));
 
 // Handle file upload
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post('/uploads', upload.single('file'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).send('No file uploaded.');
