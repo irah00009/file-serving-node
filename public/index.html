@@ -5,74 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Node.js File Server</title>
     <style>
-        /* Inline CSS styles */
+        body, h1, form {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #e9ecef; /* Light gray background */
-            font-family: 'Arial', sans-serif; /* Clean font */
+            background-color: #001f3f; /* Navy blue background */
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            margin: 0; /* Reset margin */
+            height: 100vh;
         }
 
         h1 {
-            color: #343a40; /* Dark gray color */
-            margin-bottom: 20px; /* Space below the heading */
-            text-align: center; /* Center the heading */
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
         }
 
         form {
-            background: white; /* White background for the form */
-            padding: 30px; /* Increased padding inside the form */
-            border-radius: 10px; /* More rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
-            text-align: center; /* Center text in the form */
-            width: 300px; /* Fixed width for the form */
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            transition: transform 0.2s;
+        }
+
+        form:hover {
+            transform: scale(1.02);
         }
 
         input[type="file"] {
-            margin: 15px 0; /* Space around the input */
-            padding: 10px; /* Padding inside the input */
-            border: 1px solid #ced4da; /* Light gray border */
-            border-radius: 5px; /* Rounded corners */
-            width: 100%; /* Full width */
-            box-sizing: border-box; /* Include padding in width */
-            font-size: 14px; /* Font size for the input */
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #f8f9fa;
         }
 
         button {
-            background-color: #007bff; /* Blue background */
-            color: white; /* White text */
-            border: none; /* No border */
-            padding: 12px 20px; /* Padding inside the button */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            font-size: 16px; /* Larger text */
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
-            margin-top: 10px; /* Space above the button */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 10px;
+            width: 100%;
         }
 
         button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            transform: translateY(-2px); /* Slight lift effect */
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
         .notes {
-            margin-top: 20px; /* Space above the notes */
-            background-color: #f8f9fa; /* Light background for notes */
-            border: 1px solid #ced4da; /* Light gray border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 15px; /* Padding inside the notes */
-            text-align: left; /* Align text to the left */
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: left;
+            width: 350px;
         }
 
         .notes h3 {
-            color: #343a40; /* Dark gray color for the heading */
+            color: #343a40;
+            margin-bottom: 10px;
         }
 
         .notes p, .notes ul {
-            color: #495057; /* Darker gray for text */
+            color: #495057;
+            margin: 5px 0;
         }
     </style>
 </head>
