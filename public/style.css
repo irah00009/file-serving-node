@@ -1,12 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+/* Reset some default styles */
+body, h1, form {
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+/* Set a background color and font for the body */
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    font-family: Arial, sans-serif; /* Clean font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Style the main heading */
 h1 {
-    color: #2c3e50;
-    text-align: center;
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Style the form */
+form {
+    background: white; /* White background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text in the form */
+}
+
+/* Style the file input */
+input[type="file"] {
+    margin: 10px 0; /* Space around the input */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Style the submit button */
+button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Larger text */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Change button color on hover */
+button:hover {
+    background-color: #218838; /* Darker green on hover */
 }
