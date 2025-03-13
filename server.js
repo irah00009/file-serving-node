@@ -37,7 +37,8 @@ app.use(express.static('public'));
 
 // Handle file upload
 app.post('/upload', upload.single('file'), (req, res) => {
-    res.send('File uploaded successfully!');
+    console.log(`File uploaded: ${req.file.originalname}`); // Log the uploaded file name
+    res.send(`File uploaded successfully: ${req.file.originalname}`);
 });
 
 // Error handling middleware
